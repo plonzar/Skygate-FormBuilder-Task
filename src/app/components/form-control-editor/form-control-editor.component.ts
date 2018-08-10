@@ -21,8 +21,6 @@ export class FormControlEditorComponent implements OnInit {
     {
       case Types.number:
       case Types.text:
-        debugger;
-
         if(this.formControlInstance.DisplayCondition.condition == "")
           this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
         break;
