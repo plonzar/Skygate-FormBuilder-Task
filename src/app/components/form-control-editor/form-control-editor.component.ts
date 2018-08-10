@@ -21,11 +21,16 @@ export class FormControlEditorComponent implements OnInit {
     {
       case Types.number:
       case Types.text:
-        this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
+        debugger;
+
+        if(this.formControlInstance.DisplayCondition.condition == "")
+          this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
         break;
       case Types.radio:
-        this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
-        this.formControlInstance.DisplayCondition.value = "yes"
+        if(this.formControlInstance.DisplayCondition.condition == ""){
+          this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
+          this.formControlInstance.DisplayCondition.value = "yes"
+        }
         break;
     }
     }
