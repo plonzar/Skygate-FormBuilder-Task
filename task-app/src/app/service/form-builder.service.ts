@@ -131,6 +131,12 @@ export class FormBuilderService extends BaseService {
     );
   }
 
+  getJsonString(){
+   return this.connection.select({
+      from: 'Forms',
+    });
+  }
+
   // Map data from indexDB to FormControlModel
   private mapFormData(formData, parentForm: FormControlModel = null) {
     const tempForm = new FormControlModel();

@@ -1,10 +1,10 @@
-textarea { 
+.render-area { 
   padding: 10px;
   resize: none;
   width: 100%;
-  overflow: hidden;
+  height: 350px;
+  overflow-y: auto;
   border: none;
-  word-wrap: break-word;
   outline: none;
 }
 

@@ -10,27 +10,16 @@ export class FormExportComponent implements OnInit {
 
   jsonString: string;
   textareaHeightNotChanged = true;
-  @ViewChild('renderArea') textArea: ElementRef;
 
   constructor(public formService: FormBuilderService) {
     this.formService.getForms();
    }
 
   ngOnInit() {
-    this.formService.gettingFormsFinished.subscribe(() => {
-        this.jsonString = JSON.stringify(this.formService.mainFormsArray);
-
-        if (this.textareaHeightNotChanged) {
-          this.resizeArea();
-        }
+    this.formService.getJsonString().then((data) => {
+        this.jsonString = JSON.stringify(data);
       }
     );
-  }
-
-  resizeArea() {
-    const overflowHeight = this.textArea.nativeElement.scrollHeight;
-    this.textareaHeightNotChanged = false;
-    return `${overflowHeight + 20}px`;
   }
 
 }
