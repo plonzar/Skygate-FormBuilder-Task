@@ -1,0 +1,88 @@
+<div class="editor-box">
+  <div *ngIf="formControlInstance.Parent != null">
+
+    <ng-template [ngIf]="formControlInstance.Parent.Type == 'text'">
+      <div>
+        <div class="inline-form-label">
+          Condition
+        </div>
+        <div class="inline-condition-form">
+          <select [(ngModel)]="formControlInstance.DisplayCondition.condition" (change)="change()">
+            <option value="Equals" selected>Equals</option>
+          </select>
+        </div>
+        <div class="inline-condition-form" (change)="change()">
+          <input type="text" [(ngModel)]="formControlInstance.DisplayCondition.value" />
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="formControlInstance.Parent.Type == 'radio'">
+      <div>
+        <div class="inline-form-label">
+          Condition
+        </div>
+        <div class="inline-condition-form">
+          <select [(ngModel)]="formControlInstance.DisplayCondition.condition" (change)="change()">
+            <option value="Equals" selected>Equals</option>
+          </select>
+        </div>
+        <div class="inline-condition-form">
+          <select [(ngModel)]="formControlInstance.DisplayCondition.value" (change)="change()">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="formControlInstance.Parent.Type == 'number'">
+      <div>
+        <div class="inline-form-label">
+          Condition
+        </div>
+        <div class="inline-condition-form">
+          <select [(ngModel)]="formControlInstance.DisplayCondition.condition" (change)="change()">
+            <option value="Equals" selected>Equals</option>
+            <option value="Greater than">Greater than</option>
+            <option value="Less than">Less than</option>
+          </select>
+        </div>
+        <div class="inline-condition-form">
+          <input type="number" [(ngModel)]="formControlInstance.DisplayCondition.value" (change)="change()">
+        </div>
+      </div>
+    </ng-template>
+    
+  </div>
+
+  <div>
+    <div class="inline-form-label">
+      Question
+    </div>
+    <div class="inline-form">
+      <input type="text" [(ngModel)]="formControlInstance.Question" class="" (change)="change()"/>
+    </div>
+  </div>
+  <div>
+    <div class="inline-form-label">
+      Type
+    </div>
+    <div class="inline-form">
+      <select [(ngModel)]="formControlInstance.Type" (change)="change()">
+        <option value="text">Text</option>
+        <option value="number">Number</option>
+        <option value="radio">Radio</option>
+      </select>
+    </div>
+  </div>
+  <div style="margin-bottom: 10px;">
+    <button style="float: right; margin-right: 20px;" (click)="delete()">Delete</button>
+    <button style="float: right; margin-right: 20px;" (click)="addSubItem()">Add Sub-Input</button>
+    <div style="clear: right;"></div>
+  </div>
+</div>
+
+<div style="margin-left: 20px;">
+  <app-form-control-editor *ngFor="let item of formControlInstance.ChildrenArray" [formControlInstance]="item"></app-form-control-editor>
+</div>
