@@ -10,7 +10,7 @@ import { Subject } from '../../../node_modules/rxjs';
 export class FormBuilderService extends BaseService {
 
   mainFormsArray: FormControlModel[] = [];
-  gettingFormsFinished: Subject<boolean> = new Subject<boolean>();
+
   // Geting forms from DB
   getForms() {
     this.connection.select({
@@ -26,7 +26,6 @@ export class FormBuilderService extends BaseService {
           this.appdendToParent(element);
           this.mainFormsArray.push(element);
         }
-        this.gettingFormsFinished.next(true);
       }
     )
     .catch(
