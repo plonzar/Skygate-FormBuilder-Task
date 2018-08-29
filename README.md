@@ -7,7 +7,7 @@ Requirements:
 - node.js installed on your computer,
 - npm installed on your computer
 
-Program was worked well using:
+Program worked well using:
 - OS: Windows 10,
 - Browser: Google Chrome
 
