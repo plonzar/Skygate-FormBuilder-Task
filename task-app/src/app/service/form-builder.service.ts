@@ -131,7 +131,7 @@ export class FormBuilderService extends BaseService {
     );
   }
 
-  getJsonString(){
+  getJsonString() {
    return this.connection.select({
       from: 'Forms',
     });
