@@ -32,3 +32,21 @@
 .editor-box input, select{
   height: 30px;
 }
+
+
+.button {
+  float: right; 
+  margin-right: 20px;
+}
+
+.subForm {
+  margin-left: 20px;
+}
+
+.button-section {
+  margin-bottom: 10px;
+}
+
+.condition-container {
+  display: inline-block;
+}

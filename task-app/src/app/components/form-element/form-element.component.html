@@ -1,0 +1,29 @@
+<div class="form-element" [ngClass]="{'hidden':hideElement()}">
+  <div>
+    <strong>{{formControlElement.question}}</strong>
+  </div>
+  <div *ngIf="formControlElement.type == 'text' || formControlElement.type == 'number'">
+    <input [(ngModel)]="answer" name="{{formControlElement.id}}" type="{{formControlElement.type}}" />
+  </div>
+  <div *ngIf="formControlElement.type == 'radio'">
+    
+    <div class="radio-container">
+      <div class="radio-container-check">
+        <input [(ngModel)]="answer" name="{{formControlElement.id}}" type="radio" value="yes" />
+      </div>
+      <div class="radio-container-text">
+        <strong>Yes</strong>
+      </div>
+      <div class="radio-container-separator"></div>
+      <div class="radio-container-check">
+        <input [(ngModel)]="answer" name="{{formControlElement.id}}" type="radio" value="no" />
+      </div>
+      <div class="radio-container-text">
+        <strong>No</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <app-form-element *ngFor="let subForm of formControlElement.childrenArray" [formControlElement]="subForm" [parentAnswer]="answer"></app-form-element>
+</div>

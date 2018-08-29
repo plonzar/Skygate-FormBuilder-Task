@@ -1,12 +1,10 @@
 import { DisplayConditionModel } from './display-condition.model';
-import { Types } from '../enums/types.enum';
 
-export class FormControlModel
-{
-  Id: number;
-  Question: string = "";
-  Type: string = "text";
-  DisplayCondition: DisplayConditionModel = new DisplayConditionModel();
-  ChildrenArray: FormControlModel[]  = [];
-  Parent: FormControlModel = null;
+export class FormControlModel {
+  id: number;
+  question = '';
+  type = 'text';
+  displayCondition: DisplayConditionModel = new DisplayConditionModel();
+  childrenArray: FormControlModel[]  = [];
+  parent: FormControlModel = null;
 }

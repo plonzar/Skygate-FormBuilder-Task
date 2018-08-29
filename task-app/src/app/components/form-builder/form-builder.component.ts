@@ -1,4 +1,3 @@
-import { Types } from './../../enums/types.enum';
 import { FormBuilderService } from './../../service/form-builder.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +13,7 @@ export class FormBuilderComponent implements OnInit {
     this.fromBuildService.getForms();
   }
 
-  addInput(){
+  addInput() {
     this.fromBuildService.addMainForm();
   }
 

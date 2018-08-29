@@ -1,9 +1,19 @@
 <div class="container">
-  <div style="text-align: center;">
+  <div class="header">
     <h1>FORM BUILDER</h1>
   </div>
-  <div style="margin-top: 60px;">
-    <app-form-builder></app-form-builder>
+  <div class="container">
+    <div class="nav">
+      <div class="nav-link" routerLink="/create" routerLinkActive="active-page">
+        Create
+      </div>
+      <div class="nav-link" routerLink="/preview" routerLinkActive="active-page">
+        Preview
+      </div>
+      <div class="nav-link" routerLink="/export" routerLinkActive="active-page">
+        Export
+      </div>
+    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
-

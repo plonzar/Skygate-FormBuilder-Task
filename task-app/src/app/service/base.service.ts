@@ -1,7 +1,6 @@
 import { IdbService } from './idb.service';
 import { IDataBase, DATA_TYPE, ITable } from 'jsstore';
 
-
 export class BaseService {
 
   dbname = 'Skygate';
@@ -10,7 +9,6 @@ export class BaseService {
     this.connection.setLogStatus(false);
     this.initJsStore();
   }
-
 
   get connection() {
     return IdbService.idbCon;

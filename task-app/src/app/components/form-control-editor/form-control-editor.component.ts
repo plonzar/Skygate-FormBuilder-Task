@@ -16,30 +16,31 @@ export class FormControlEditorComponent implements OnInit {
   constructor(private service: FormBuilderService) { }
 
   ngOnInit() {
-    if(this.formControlInstance.Parent != null){
-      switch (this.formControlInstance.Parent.Type)
-    {
+    if (this.formControlInstance.parent != null) {
+      switch (this.formControlInstance.parent.type) {
       case Types.number:
       case Types.text:
-        this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
+        if (this.formControlInstance.displayCondition.condition === '') {
+          this.formControlInstance.displayCondition.condition = Conditions.Equals;
+        }
         break;
       case Types.radio:
-        this.formControlInstance.DisplayCondition.condition = Conditions.Equals;
-        this.formControlInstance.DisplayCondition.value = "yes"
+        this.formControlInstance.displayCondition.condition = Conditions.Equals;
+        this.formControlInstance.displayCondition.value = 'yes';
         break;
     }
     }
   }
 
-  addSubItem(){
+  addSubItem() {
     this.service.addSubForm(this.formControlInstance);
   }
 
-  delete(){
-    this.service.removeForm(this.formControlInstance.Id);
+  delete() {
+    this.service.removeForm(this.formControlInstance);
   }
 
-  change(){
+  change() {
     this.service.updateForm(this.formControlInstance);
   }
 }

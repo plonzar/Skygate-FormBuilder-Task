@@ -1,5 +1,4 @@
-export class DisplayConditionModel
-{
+export class DisplayConditionModel {
   condition: string;
   value: any;
 }

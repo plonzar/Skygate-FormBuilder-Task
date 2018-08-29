@@ -1,0 +1,16 @@
+textarea { 
+  padding: 10px;
+  resize: none;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  word-wrap: break-word;
+  outline: none;
+}
+
+.json-code {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid gray;
+}
